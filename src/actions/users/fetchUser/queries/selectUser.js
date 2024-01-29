@@ -6,10 +6,7 @@ const selectUser = ({ email, password }) => submitQuery`
         first_name,
         last_name,
         password,
-        organization_id,
-        job_title,
         email,
-        phone_number,
         user_types.user_type_id,
         user_types.user_type
     FROM users

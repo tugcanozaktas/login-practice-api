@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  login-practice-api-db:
+    container_name: login-practice-api-mysql-db
+    image: jamielsharief/mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: "login_practice_api_db"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - vol-login-practice-api-db:/var/lib/mysql
+volumes:
+  vol-login-practice-api-db:

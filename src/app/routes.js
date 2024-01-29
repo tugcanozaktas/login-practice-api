@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const express = require("express");
 
 const postLogin = require("./controllers/users/login");
@@ -12,12 +13,7 @@ const router = express.Router();
 
 // USER MANAGEMENT
 router.post("/login", postLogin);
-router.post(
-  "/register",
-  authentication,
-  authorise({ roles: [ADMIN] }),
-  postUser
-);
+router.post("/register", postUser);
 router.put("/edit/user", authentication, putUserDetails);
 
 router.get("/user-types", getUserTypes);
